@@ -508,15 +508,6 @@ a.encabezado-icon-enlace:active {
 
 
 
-
-
-
-
-
-
-
-
-
 .apartados,
 h1 {
     color: lightblue;
@@ -549,9 +540,6 @@ h1 {
     align-items: center;
     justify-content: flex-start;
 
-
-
-
     border: var(--border-px) dashed green;
 
     /*
@@ -560,7 +548,6 @@ h1 {
 
     overflow-x: auto;
     white-space: nowrap;
-
 
     display: grid;
     grid-auto-flow: column;
@@ -587,11 +574,7 @@ h1 {
     max-width: 90vw;
 
     border: var(--border-px) solid red;
-
-
-
     /*overflow-x:auto; NO esto es para los contenedores individuales*/
-
 }
 
 .first-element {
@@ -599,8 +582,6 @@ h1 {
     max-width: 80vw;
     content-visibility: visible;
     margin-left: 1rem;
-
-
 }
 
 .media-element>img {
