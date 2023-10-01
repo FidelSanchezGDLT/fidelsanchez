@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>test 1</title>
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            display: block;
+        }
+
+
+
+
+        /* The Modal (background) */
+        .modal {
+            /* display: none;
+            /* Hidden by default */
+
+            visibility: hidden;
+            opacity: 0;
+
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 50px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.is-visible {
+            /*al añadir la clase se hace visible el modal*/
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 0px solid hsl(0, 0%, 53%);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90%;
+            overflow: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+
+        }
+
+        .media-element {
+            cursor: pointer;
+            animation: animate-l2r .5s ease-in;
+            animation-delay: 0s;
+            /*display:none;*/
+
+        }
+
+        .first-element {
+            animation: none;
+            z-index: 1;
+            /*display: block;*/
+
+        }
+
+        @keyframes animate-l2r {
+            from {
+                left: -500px;
+                opacity: 0;
+
+            }
+
+            to {
+                left: 0;
+                opacity: 1;
+
+            }
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            position: fixed;
+            top: 1.5rem;
+            right: 2vw;
+
+            /*margin-top: -1.5rem;*/
+            font-size: 40px;
+            font-weight: lighter;
+
+
+            background-color: hsl(0, 0%, 70%);
+            padding: .75rem;
+            border-radius: 5px;
+
+
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: var(--icon-color);
+            color: white;
+            border-radius: 5px 5px 0 0;
+
+        }
+
+        .modal-body {
+            padding: .5rem 0rem;
+            text-align: center;
+            margin: auto;
+
+        }
+
+
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: var(--icon-color);
+            color: white;
+            border-radius: 0 0 5px 5px;
+        }
+    </style>
+
+
+
+</head>
+
+<body onload="loadImgs()">
+    <h1>
+        Prueba test
+    </h1>
+    <!--
+    <p>esto es un texto de prueba ostia esto esta guapisimo</p>
+    <div style="display: inline-block;">
+        <h1>titulo h1</h1>
+        <h2>titulo h2</h2>
+        <h3> titulo h3</h3>
+        <h4>titulo h4</h4>
+        <p style="display: inline;"><b>4 prueba</b> prueba</p>
+        <h5> titulo h5</h5>
+        <h6> titulo h6</h6>
+    </div>
+
+
+    <h2>titulo h2</h2>
+    <h3> titulo h3</h3>
+    <h4>titulo h4</h4>
+    <h5> titulo h5</h5> -->
+
+
+    <div class="apartado-individual">
+        <h1 id="ilus">
+            <div class="apartado-svg">
+                <!--::::::::ICONO SVG::::::::-->
+                <svg id="fidel-sanchez" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.08 170.08">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: var(--icon-color);
+                            }
+                        </style>
+                    </defs>
+                    <path class="cls-1"
+                        d="M85,0a85,85,0,1,0,85,85A85,85,0,0,0,85,0Zm0,160.08a75,75,0,1,1,75-75A75.12,75.12,0,0,1,85,160.08Z" />
+                    <path class="cls-1"
+                        d="M130.39,101.93h-5.45a8.74,8.74,0,0,0,.83-3.72V61.87A8.83,8.83,0,0,0,117,53.05h-6.6V45.84a5,5,0,0,0-10,0v7.21h-10V28.12a5,5,0,0,0-10,0V53.05h-10V45.84a5,5,0,0,0-10,0v7.21H53.13a8.83,8.83,0,0,0-8.82,8.82V98.21a8.74,8.74,0,0,0,.83,3.72H39.68a5.27,5.27,0,0,0,0,10.54H63.32L43.58,130.68A5,5,0,1,0,50.36,138l27.71-25.56H92.63L120.34,138a5,5,0,1,0,6.78-7.35l-19.74-18.21h23a5.27,5.27,0,1,0,0-10.54ZM49.31,98.21V61.87a3.82,3.82,0,0,1,3.82-3.82H117a3.82,3.82,0,0,1,3.82,3.82V98.21a3.82,3.82,0,0,1-3,3.72H52.28A3.83,3.83,0,0,1,49.31,98.21Z" />
+                </svg>
+                <!--::::::::ICONO SVG::::::::-->
+            </div>Ilustración
+        </h1>
+        <div class="media-scroller">
+
+            <div type="button" data-open="ilus-1" class="media-element first-element">
+                <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                <p>titulo</p>
+            </div>
+            <!--the modal ILUS 1 -->
+            <div id="ilus-1" class="modal">
+
+                <!--modal content ilus 1-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span data-close class="close">&times;</span>
+                        <h2>TITULO (Modal Header)</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                        <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <p>mas texto, esto es una descripción, donde se explica algo interesante.</p>
+                        <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-1.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                        <p>Ver mas en behance</p>
+                        <p>mas texto de prueba</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore officiis tenetur
+                            distinctio perspiciatis officia vero ad laboriosam, architecto est, mollitia accusantium
+                            fugiat fugit quisquam natus nulla aspernatur autem expedita.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div type="button" data-open="ilus-2" class="media-element">
+                <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen"
+                    loading="lazy">
+                <p>titulo</p>
+            </div>
+            <!--the modal ILUS 2 -->
+            <div id="ilus-2" class="modal">
+
+                <!--modal content ilus 2-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span data-close class="close">&times;</span>
+                        <h2>TITULO (Modal Header)</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                        <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <p>mas texto, esto es una descripción, donde se explica algo interesante.</p>
+                        <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-2.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                        <p>Ver mas en behance</p>
+                        <p>mas texto de prueba</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore officiis tenetur
+                            distinctio perspiciatis officia vero ad laboriosam, architecto est, mollitia accusantium
+                            fugiat fugit quisquam natus nulla aspernatur autem expedita.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div type="button" data-open="ilus-3" class="media-element">
+                <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen"
+                    loading="lazy">
+                <p>titulo</p>
+            </div>
+            <!--the modal ILUS 3 -->
+            <div id="ilus-3" class="modal">
+
+                <!--modal content ilus 3-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span data-close class="close">&times;</span>
+                        <h2>TITULO (Modal Header)</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                        <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <p>mas texto, esto es una descripción, donde se explica algo interesante.</p>
+                        <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-3.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                        <p>Ver mas en behance</p>
+                        <p>mas texto de prueba</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore officiis tenetur
+                            distinctio perspiciatis officia vero ad laboriosam, architecto est, mollitia accusantium
+                            fugiat fugit quisquam natus nulla aspernatur autem expedita.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div type="button" data-open="ilus-4" class="media-element">
+                <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen"
+                    loading="lazy">
+                <p>titulo</p>
+            </div>
+            <!--the modal ILUS 4 -->
+            <div id="ilus-4" class="modal">
+
+                <!--modal content ilus 4-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span data-close class="close">&times;</span>
+                        <h2>TITULO (Modal Header)</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                        <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <p>mas texto, esto es una descripción, donde se explica algo interesante.</p>
+                        <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-4.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                        <p>Ver mas en behance</p>
+                        <p>mas texto de prueba</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore officiis tenetur
+                            distinctio perspiciatis officia vero ad laboriosam, architecto est, mollitia accusantium
+                            fugiat fugit quisquam natus nulla aspernatur autem expedita.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div type="button" data-open="ilus-5" class="media-element">
+                <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen"
+                    loading="lazy">
+                <p>titulo</p>
+            </div>
+            <!--the modal ILUS 5 -->
+            <div id="ilus-5" class="modal">
+
+                <!--modal content ilus 5-->
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span data-close class="close">&times;</span>
+                        <h2>TITULO (Modal Header)</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                        <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <p>mas texto, esto es una descripción, donde se explica algo interesante.</p>
+                        <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+                        <img src="/img/fidel-sanchez_ilustracion-5.jpg" alt="descripcion" title="titulo de la imagen">
+                        <h3>titulo imagen</h3>
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                        <p>Ver mas en behance</p>
+                        <p>mas texto de prueba</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi labore officiis tenetur
+                            distinctio perspiciatis officia vero ad laboriosam, architecto est, mollitia accusantium
+                            fugiat fugit quisquam natus nulla aspernatur autem expedita.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <p>some text</p>
+    </div>
+
+
+    <style>
+        .container>div {
+            display: block;
+
+
+            column-count: 3;
+
+
+
+            /*flex-grow, flex-shrink, and flex-basis 
+                flex: 1 1 145px;
+                flex-direction: row;
+
+                grid-template-columns: auto 35%;                           
+                grid-auto-columns: dense;*/
+
+
+            gap: 5px;
+
+            padding: 30px;
+
+        }
+
+        .fotogaleria {
+            display: block;
+            column-count: 3;
+            grid-template-columns: auto 35% 20%;
+            gap: 5px;
+
+        }
+
+        /*.modal-body > img {
+            max-height: ;
+        }*/
+
+        .gallery-img {
+            margin-bottom: 5px;
+
+        }
+    </style>
+
+    <div>
+        <section class="section gallery grid">
+            <div class="container">
+
+                <div id='gallery-items'>
+                </div>
+
+                <div type="button" data-open="fotogal-${n}" class="gallery-img">
+                    <img data-lazy-image src="${img.src}" alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal ${n} -->
+                <div id="fotogal-${n}" class="modal">
+
+                    <!--modal content fotogal ${n}-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara ${n}</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image src="${img.src}" alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="fotogaleria">
+
+                <div type="button" data-open="fotogal-1" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-1.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 1 -->
+                <div id="fotogal-1" class="modal">
+
+                    <!--modal content fotogal 1-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 1</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-1.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-2" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-2.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 2 -->
+                <div id="fotogal-2" class="modal">
+
+                    <!--modal content fotogal 2-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 2</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-2.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-3" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-3.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 3 -->
+                <div id="fotogal-3" class="modal">
+
+                    <!--modal content fotogal 3-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 3</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-3.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-4" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-4.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 4 -->
+                <div id="fotogal-4" class="modal">
+
+                    <!--modal content fotogal 4-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 4</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-4.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-5" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-5.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 5 -->
+                <div id="fotogal-5" class="modal">
+
+                    <!--modal content fotogal 5-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 5</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-5.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-6" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-6.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 6 -->
+                <div id="fotogal-6" class="modal">
+
+                    <!--modal content fotogal 6-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 6</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-6.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-7" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-7.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 7 -->
+                <div id="fotogal-7" class="modal">
+
+                    <!--modal content fotogal 7-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 7</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-7.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-8" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-8.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 8 -->
+                <div id="fotogal-8" class="modal">
+
+                    <!--modal content fotogal 8-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 8</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-8.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-9" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-9.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 9 -->
+                <div id="fotogal-9" class="modal">
+
+                    <!--modal content fotogal 9-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 9</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-9.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-10" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-10.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 10 -->
+                <div id="fotogal-10" class="modal">
+
+                    <!--modal content fotogal 10-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 10</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-10.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-11" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-11.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 11 -->
+                <div id="fotogal-11" class="modal">
+
+                    <!--modal content fotogal 11-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 11</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-11.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-12" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-12.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 12 -->
+                <div id="fotogal-12" class="modal">
+
+                    <!--modal content fotogal 12-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 12</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-12.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-13" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-13.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 13 -->
+                <div id="fotogal-13" class="modal">
+
+                    <!--modal content fotogal 13-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 13</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-13.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-14" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-14.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 14 -->
+                <div id="fotogal-14" class="modal">
+
+                    <!--modal content fotogal 14-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 14</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-14.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-15" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-15.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 15 -->
+                <div id="fotogal-15" class="modal">
+
+                    <!--modal content fotogal 15-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 15</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-15.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-16" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-16.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 16 -->
+                <div id="fotogal-16" class="modal">
+
+                    <!--modal content fotogal 16-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 16</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-16.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+                <div type="button" data-open="fotogal-17" class="gallery-img">
+                    <img data-lazy-image="" src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-17.jpg"
+                        alt="cxm silvia lara 22">
+                </div>
+
+                <!--the modal fotogal 17 -->
+                <div id="fotogal-17" class="modal">
+
+                    <!--modal content fotogal 17-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <h2>CxM Silvia Lara 17</h2>
+                        </div>
+                        <div class="modal-body">
+                            <img data-lazy-image=""
+                                src="http://127.0.0.1:5500/img/carreraSL/@fidelsanchezdg-SL21K2022-17.jpg"
+                                alt="cxm silvia lara 22">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+    </div>
+    </section>
+    </div>
+
+
+
+    <script>
+
+        const openEls = document.querySelectorAll("[data-open]");
+        const closeEls = document.querySelectorAll("[data-close]");
+        const isVisible = "is-visible";
+
+        //esto es para abrir el modal
+        //relaciona el data-open del boton/img con el id del modal y le añade la class isVisible 
+        for (const elements of openEls) {
+            elements.addEventListener("click", function () {
+                const modalId = this.dataset.open;
+                document.getElementById(modalId).classList.add(isVisible);
+            });
+        }
+
+        // esto es para cerrar el modal en el aspa (x)
+        for (const elements of closeEls) {
+            elements.addEventListener("click", function () {
+                this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+            });
+        }
+
+        // esto es para cerrar el modal clicando fuera
+        document.addEventListener("click", close => {
+            if (close.target == document.querySelector(".modal.is-visible")) {
+                document.querySelector(".modal.is-visible").classList.remove(isVisible);
+            }
+        });
+
+        // esto es para cerrar el modal pulsando 'esc'
+        document.addEventListener("keyup", close => {
+            // if we press the ESC
+            if (close.key == "Escape" && document.querySelector(".modal.is-visible")) {
+                document.querySelector(".modal.is-visible").classList.remove(isVisible);
+            }
+        });
+
+
+
+
+        function doPortItem(n) {
+            let img = document.createElement('img');
+            img.src = './img/carreraSL/@fidelsanchezdg-SL21K2022-' + n + '.jpg';
+            img.addEventListener('load', () => {
+                let div = `<div type="button" data-open="fotogal-${n}" class="gallery-img">
+                    <img data-lazy-image  src="${img.src}" alt="cxm silvia lara 22"> 
+                    </div>
+
+                    <!--the modal fotogal ${n} -->
+                    <div id="fotogal-${n}" class="modal">
+
+                        <!--modal content fotogal ${n}-->
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <span data-close class="close">&times;</span>
+                                <h2>CxM Silvia Lara ${n}</h2>
+                            </div>
+                            <div class="modal-body">
+                                <img data-lazy-image  src="${img.src}" alt="cxm silvia lara 22"> 
+                            </div>
+                        </div>
+                    </div>`;
+                document.querySelector('#gallery-items').innerHTML += div;
+                doPortItem(++n)
+            })
+        }
+        doPortItem(1)
+
+
+
+
+
+
+
+
+
+        /*
+                //get the id
+                var acc = "boton-";
+                var apa = "ilus-";
+                var n = 1;
+                var iden = acc + apa + n
+                const modalIlus = ["modal-ilus-1", "modal-ilus-2", "modal-ilus-3", "modal-ilus-4", "modal-ilus-5"]
+                var modal = document.getElementById(modalIlus[n]);
+        
+                function openModal(event) {
+                    var modal = document.getElementById(event);
+        
+                }
+        
+        
+        
+        
+                //get the modal
+                // var modal = document.getElementById("modal-ilus-1");
+        
+                // Get the button that opens the modal
+                var btn = document.getElementById("boton-ilus-1");
+        
+        
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+        
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+        
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+        
+        
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }*/
+        /*
+                            //for (modalilus = 0; maoldalilus < 6; modalilus++)
+                            function openModal(event) {
+                                document.getElementById(
+                                //aqui hay que cambiar el id de donde se pulsa por el modal correspindiente    
+                                var n = "boton-" + n;
+                                "boton-ilus-1" /*cambiar a*//* "modal-ilus-1"
+"boton-ilus-" + n /*cambiar a*//* "modal-ilus-" + n
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                id.replace("boton", "modal")
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                window.onclick = function (event) {
+                                                                                                                                                                                                                                                                                                                if (event.target == boton-n) {
+                                                                                                                                                                                                                                                                                                                    modal-n.style.display = "block";}
+                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                let d = "boton"; d.replace("boton", "modal");
+                                                                                                                                                                                                                                                                                                                event.target == d { text.replace("boton", "modal") } 
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                ).style.display = "block";
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                            } */
+
+
+
+
+    </script>
+
+</body>
+
+</html>
