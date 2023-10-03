@@ -624,9 +624,9 @@ h1 {
 /*para ajustar los apartados y que no esten muy seapradoy (y se vena bien respecto a el menu de navegación)*/
 .apartado-individual {
     margin-top: -2rem;
-    counter-reset: counter-apartado;/*importante, especifica el grupo de los numeros*/  
-    counter-reset: counter-modal;/*importante, especifica el grupo de los numeros*/  
+    counter-reset: counter-apartado counter-modal;/*importante, especifica el grupo de los numeros*/  
    
+    
     border: var(--border-px) solid purple;
 }
 .apartado-individual>h1 {
