@@ -906,3 +906,8 @@ footer>p {
     color: white;
     border-radius: 0 0 5px 5px;
 }
+
+/*----------CSS BLOQUEAR SCROLL----------*/
+.scroll.is-block{
+    overflow: hidden;
+}
