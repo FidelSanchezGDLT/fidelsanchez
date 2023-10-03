@@ -7,7 +7,11 @@ html {
     overscroll-behavior-x: none;
     /*prueba-> hice esto hace que la pagina no vaile de izq a der*/
 
-    --icon-color: lightblue;
+    --icon-color: lightblue;/*solo iconos de los svg H1*/
+    --color-1st:white;
+    --color-2st:lightblue;
+    --color-3rd:hsl(0, 0%, 70%);
+
     --radio: 5px;
     --border-px: 0px;
     --boton:
@@ -61,7 +65,7 @@ html {
 /* Handle on hover 
 .media-scroller::-webkit-scrollbar-thumb:hover {
     
-    background:lightblue;
+    background:var(--color-2st);
     border: none;
     box-shadow:2px 2px 5px #7997a1,
                   -2px -2px 5px #e1ffff;
@@ -105,8 +109,8 @@ a {
     margin-bottom: 0.5rem;
     /*margin-top:0rem;*/
     /*background-color:rgba(173, 216, 230, 85%);*/
-    background-image: linear-gradient( lightblue, rgba(173, 216, 230, 70%));
-    /*lightblue;*/
+    background-image: linear-gradient( var(--color-2st), rgba(173, 216, 230, 70%));
+    /*var(--color-2st);*/
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 1400px 5px 5px 5px white, -1400px 5px 5px 5px white, 0px -10px 15px 5px;
@@ -369,9 +373,9 @@ a.menu-icon-enlace:active {
 
 
     border: var(--border-px) solid #add8e6;
-    /*lightblue;*/
+    /*var(--color-2st);*/
     ;
-    background-color: lightblue;
+    background-color: var(--color-2st);
 
 
 
@@ -385,7 +389,7 @@ h4 {
 
     margin: 0;
     color: #fff;
-    background-color: lightblue;
+    background-color: var(--color-2st);
     text-align: center;
 
     border: var(--border-px) dashed blue;
@@ -510,7 +514,7 @@ a.encabezado-icon-enlace:active {
 
 .apartados,
 h1 {
-    color: lightblue;
+    color: var(--color-2st);
     padding: 6rem 0 0 1rem;
 
 
@@ -524,7 +528,7 @@ h1 {
 }
 
 .media-scroller {
-    background-color: lightblue;
+    background-color: var(--color-2st);
     margin: 0;
     padding: 1rem 0;
     max-height: 80vh;
@@ -559,7 +563,7 @@ h1 {
 }
 
 .media-element {
-    background-color: lightgrey;
+    background-color: var(--color-3rd);
     color: white;
     padding: 0rem;
     margin-right: 1rem;
@@ -673,7 +677,7 @@ footer {
     margin:
         /*5rem*/
         0 0 0;
-    background-color: lightblue;
+    background-color: var(--color-2st);
     height: auto;
 
 
