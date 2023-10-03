@@ -603,9 +603,14 @@ h1 {
     counter-increment: counter-apartado;
     content: counter(counter-apartado)'. ';
 }
+.media-element>p::after{
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content:'\f054'; /*\f054*/
+}
 .modal-header>h2::before{
-    counter-increment: counter-modal-header;
-    content: counter(counter-modal-header)'. ';
+    counter-increment: counter-modal;
+    content: counter(counter-modal)'. ';
 }
 
 /*para ajustar el inio con el encabezado*/
@@ -620,7 +625,7 @@ h1 {
 .apartado-individual {
     margin-top: -2rem;
     counter-reset: counter-apartado;/*importante, especifica el grupo de los numeros*/  
-    counter-reset: counter-modal-header;/*importante, especifica el grupo de los numeros*/  
+    counter-reset: counter-modal;/*importante, especifica el grupo de los numeros*/  
    
     border: var(--border-px) solid purple;
 }
