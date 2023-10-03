@@ -604,8 +604,8 @@ h1 {
     content: counter(counter-apartado)'. ';
 }
 .modal-header>h2::before{
-    counter-increment: counter-modal;
-    content: counter(counter-modal)'. ';
+    counter-increment: counter-modal-header;
+    content: counter(counter-modal-header)'. ';
 }
 
 /*para ajustar el inio con el encabezado*/
@@ -620,7 +620,7 @@ h1 {
 .apartado-individual {
     margin-top: -2rem;
     counter-reset: counter-apartado;/*importante, especifica el grupo de los numeros*/  
-    counter-reset: counter-modal;/*importante, especifica el grupo de los numeros*/  
+    counter-reset: counter-modal-header;/*importante, especifica el grupo de los numeros*/  
    
     border: var(--border-px) solid purple;
 }
