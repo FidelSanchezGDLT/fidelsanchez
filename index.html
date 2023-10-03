@@ -792,7 +792,7 @@
 
                         <div class="modal-header">
                             <span data-close class="close">&times;</span>
-                            <span data-nav data-open="3d-2" class="next"><i class="fas fa-angle-right"
+                            <span data-nav data-open="3d-3" class="next"><i class="fas fa-angle-right"
                                     aria-hidden="true"></i></span>
                             <span data-nav data-open="foto-4" class="previous"><i class="fas fa-angle-left"
                                     aria-hidden="true"></i></span>
@@ -801,7 +801,7 @@
 
                         <div class="modal-body">
 
-                            <img src="/img/fidel-sanchez_3d_1-1.jpg" alt="descripcion" title="titulo de la imagen">
+                            <img src="/img/fidel-sanchez_3d_2.jpg" alt="descripcion" title="titulo de la imagen">
 
                         </div>
                         <div class="modal-footer">
@@ -815,6 +815,31 @@
                 <div type="button" data-open="3d-3" class="media-element">
                     <img src="/img/fidel-sanchez_3d_3.jpg" alt="descripcion" title="titulo de la imagen" loading="lazy">
                     <p>Infografía objetivos Nikkor</p>
+                </div>
+                <!--the modal 3d 3 -->
+                <div id="3d-3" class="modal">
+                    <!--modal content 3d 3-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span data-close class="close">&times;</span>
+                            <span data-nav data-open="3d-4" class="next"><i class="fas fa-angle-right"
+                                    aria-hidden="true"></i></span>
+                            <span data-nav data-open="foto-2" class="previous"><i class="fas fa-angle-left"
+                                    aria-hidden="true"></i></span>
+                            <h2>Cartel BenQ</h2>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <img src="/img/fidel-sanchez_3d_3.jpg" alt="descripcion" title="titulo de la imagen">
+
+                        </div>
+                        <div class="modal-footer">
+                            <br>
+
+                        </div>
+                    </div>
                 </div>
 
 
@@ -1150,10 +1175,12 @@
     </footer>
 
     <script>
-
         const openEls = document.querySelectorAll("[data-open]");
         const closeEls = document.querySelectorAll("[data-close]");
         const isVisible = "is-visible";
+
+        const navEls = document.querySelectorAll("[data-nav]"); //test nav
+        const isBlock = "is-block"; //test scroll
 
         //esto es para abrir el modal
         //relaciona el data-open del boton/img con el id del modal y le añade la class isVisible 
@@ -1161,6 +1188,19 @@
             elements.addEventListener("click", function () {
                 const modalId = this.dataset.open;
                 document.getElementById(modalId).classList.add(isVisible);
+
+                //test ok para bloquear el scroll
+                const ScrollId = "scroll"
+                document.getElementById(ScrollId).classList.add(isBlock);
+            });
+        }
+        //test nav
+        // esto es para cerrar el modal en las flechas < >
+        for (const elements of navEls) {
+            elements.addEventListener("click", function () {
+                this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+                // esto es para desbloquear el scroll
+                //document.querySelector(".scroll.is-block").classList.remove(isBlock);
             });
         }
 
@@ -1168,6 +1208,8 @@
         for (const elements of closeEls) {
             elements.addEventListener("click", function () {
                 this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+                // esto es para desbloquear el scroll
+                document.querySelector(".scroll.is-block").classList.remove(isBlock);
             });
         }
 
@@ -1175,6 +1217,8 @@
         document.addEventListener("click", close => {
             if (close.target == document.querySelector(".modal.is-visible")) {
                 document.querySelector(".modal.is-visible").classList.remove(isVisible);
+                // esto es para desbloquear el scroll
+                document.querySelector(".scroll.is-block").classList.remove(isBlock);
             }
         });
 
@@ -1183,6 +1227,8 @@
             // if we press the ESC
             if (close.key == "Escape" && document.querySelector(".modal.is-visible")) {
                 document.querySelector(".modal.is-visible").classList.remove(isVisible);
+                // esto es para desbloquear el scroll
+                document.querySelector(".scroll.is-block").classList.remove(isBlock);
             }
         });
 
