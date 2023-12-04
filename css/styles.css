@@ -6,34 +6,44 @@ html {
     scroll-behavior: smooth;
     overscroll-behavior-x: none;
     /*prueba-> hice esto hace que la pagina no vaile de izq a der*/
+    background-color: hsl(0, 0%, 0%);
+    --icon-color: hsl(0, 0%, 85%);/*solo iconos de los svg H1*/
+    --color-1:hsl(0, 0%, 90%);
+    --color-2:hsl(0, 0%, 15%);
+    --color-3:hsl(0, 0%, 25%);
+    --color-4:hsl(0, 0%, 66%);
 
-    --icon-color: lightblue;/*solo iconos de los svg H1*/
-    --color-1st:white;
-    --color-2st:lightblue;
-    --color-3rd:hsl(0, 0%, 70%);
+    /*h-hover a-active s-shadow i-inset l-light d-dark b-background   https://neumorphism.io/#232323 */
+    --color-hsl:#313131; 
+    --color-hsd: hsl(0, 0%, 5%);
+    --color-hid: hsl(0, 0%, 10%);
+    --color-hil: hsl(0, 0%, 40%);
+    --color-hb: hsla(0, 0%, 20%, 0.2);
+    --color-ab: hsl(0, 0%, 13%);
+
 
     --radio: 5px;
     --border-px: 0px;
     --boton:
         /*inset -2px -2px 5px #a3cbd8,
                inset 2px 2px 5px #b7e5f4,
-                    2px 2px 5px #7997a1,
-                   -2px -2px 5px #e1ffff /*esto es pafuera*/
+                    2px 2px 5px var(--color-hsl),
+                   -2px -2px 5px var(--color-hsl) /*esto es pafuera*/
     ;
-    --boton-hover: inset -2px -2px 5px rgb(145, 181, 193),
-        inset 2px 2px 5px rgba(256, 256, 256, 50%),
-        2px 2px 5px #7997a1,
-        -2px -2px 5px #e1ffff
+    --boton-hover: inset -2px -2px 5px var(--color-hid),
+        inset 2px 2px 5px var(--color-hil),
+        2px 2px 5px var(--color-hsd),
+        -2px -2px 5px var(--color-hsl)
         /*esto es pafuera*/
-        /*inset 2px 2px 5px #7997a1,
-            inset -2px -2px 5px #e1ffff /*esto es padentro */
+        /*inset 2px 2px 5px var(--color-hsl),
+            inset -2px -2px 5px var(--color-hsl) /*esto es padentro */
     ;
-    --boton-hover-fondo: rgba(256, 256, 256, 4%);
-    --boton-active: inset 2px 2px 5px #7997a1,
-        inset -2px -2px 5px #e1ffff
+    --boton-hover-fondo: var(--color-hb);
+    --boton-active: inset 2px 2px 5px var(--color-hsd),
+        inset -2px -2px 5px var(--color-hsl)
         /*esto es padentro */
     ;
-    --boton-active-fondo: rgba(0, 0, 0, 4%);
+    --boton-active-fondo: var(--color-ab);
     --boton-transition: all .3s ease-in-out 0s;
 }
 
@@ -45,7 +55,7 @@ html {
 
 /* Track */
 .media-scroller::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 10%);
+    background: var(--color-ab);
     border: var(--border-px) dashed white;
     border-radius: 100vh;
     box-shadow: var(--boton-active);
@@ -55,20 +65,20 @@ html {
 
 /* Handle */
 .media-scroller::-webkit-scrollbar-thumb {
-    background: lightgrey;
+    background: var(--color-hb);
     border: var(--border-px) solid black;
     border-radius: 100vh;
-    box-shadow: inset -2px -2px 5px #91b5c1,
-        inset 2px 2px 5px rgba(256, 256, 256, 50%);
+    box-shadow: inset -2px -2px 5px var(--color-hid),
+        inset 2px 2px 5px var(--color-hil);
 }
 
 /* Handle on hover 
 .media-scroller::-webkit-scrollbar-thumb:hover {
     
-    background:var(--color-2st);
+    background:var(--color-2);
     border: none;
-    box-shadow:2px 2px 5px #7997a1,
-                  -2px -2px 5px #e1ffff;
+    box-shadow:2px 2px 5px var(--color-1),
+                  -2px -2px 5px var(--color-hsl);
 }*/
 
 body {
@@ -93,7 +103,7 @@ img {
 }
 
 :lang(en) {
-    color: darkgrey;
+    color: var(--color-4);
 
 }
 
@@ -109,11 +119,11 @@ a {
     margin-bottom: 0.5rem;
     /*margin-top:0rem;*/
     /*background-color:rgba(173, 216, 230, 85%);*/
-    background-image: linear-gradient( var(--color-2st), rgba(173, 216, 230, 70%));
-    /*var(--color-2st);*/
+    background-image: linear-gradient( black, hsla(0, 0%, 0%, 0.70));
+    /*var(--color-2);*/
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    box-shadow: 1400px 5px 5px 5px white, -1400px 5px 5px 5px white, 0px -10px 15px 5px;
+    box-shadow: 1400px 5px 5px 5px black, -1400px 5px 5px 5px black, 0px -10px 15px 5px;
     /*despl-horizontal despl-vertical blur borde extra*/
     /*flex-direction: row;
     overflow: visible;*/
@@ -344,7 +354,7 @@ a.menu-item-enlace:link,
 a.menu-item-enlace:visited,
 a.menu-icon-enlace:link,
 a.menu-icon-enlace:visited {
-    color: white;
+    color: var(--color-1);
 }
 
 a.menu-logo-enlace:hover,
@@ -373,13 +383,10 @@ a.menu-icon-enlace:active {
 
 
     border: var(--border-px) solid #add8e6;
-    /*var(--color-2st);*/
+    /*var(--color-2);*/
     ;
-    background-color: var(--color-2st);
-
-
-
-    box-shadow: 0 5px 10px darkgrey;
+    background-color: var(--color-2);
+    box-shadow: 0 5px 10px hsl(0, 0%, 0%);
 
 
 }
@@ -389,7 +396,7 @@ h4 {
 
     margin: 0;
     color: #fff;
-    background-color: var(--color-2st);
+    background-color: var(--color-2);
     text-align: center;
 
     border: var(--border-px) dashed blue;
@@ -424,7 +431,7 @@ h4 {
 
 
     /*
-    color: white;
+    color: var(--color-1);
     text-decoration: none;
     text-align: center;
     justify-content: center;
@@ -491,7 +498,7 @@ h4 {
 
 a.encabezado-icon-enlace:link,
 a.encabezado-icon-enlace:visited {
-    color: white;
+    color: var(--color-1);
 }
 
 a.encabezado-icon-enlace:hover {
@@ -514,7 +521,7 @@ a.encabezado-icon-enlace:active {
 
 .apartados,
 h1 {
-    color: var(--color-2st);
+    color: var(--color-1);
     padding: 6rem 0 0 1rem;
 
 
@@ -528,7 +535,7 @@ h1 {
 }
 
 .media-scroller {
-    background-color: var(--color-2st);
+    background-color: var(--color-2);
     margin: 0;
     padding: 1rem 0;
     max-height: 80vh;
@@ -563,8 +570,8 @@ h1 {
 }
 
 .media-element {
-    background-color: var(--color-3rd);
-    color: white;
+    background-color: var(--color-3);
+    color: var(--color-1);
     padding: 0rem;
     margin-right: 1rem;
     position: relative;
@@ -656,9 +663,9 @@ h1 {
 .texto {
     height: auto;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0 2rem;
-    color: black;
+    color: var(--color-1);
     text-align: left;
 
     border: var(--border-px) solid blue;
@@ -678,7 +685,7 @@ footer {
     margin:
         /*5rem*/
         0 0 0;
-    background-color: var(--color-2st);
+    background-color: var(--color-2);
     height: auto;
 
 
@@ -711,13 +718,13 @@ footer {
 
 a.rrss:link,
 a.rrss:visited {
-    color: rgba(0, 0, 0, 70%);
+    color: var(--color-4);
 
 }
 
 a.rrss:hover {
     text-decoration: underline;
-    color: black;
+    color:var(--color-1);
 
     border-radius: var(--radio);
     background: var(--boton-hover-fondo);
@@ -734,6 +741,7 @@ a.rrss:active {
 }
 
 footer>p {
+    color: var(--color-4);
     border: var(--border-px) solid blue;
     margin: 3rem 0 0 0;
 }
@@ -854,7 +862,7 @@ footer>p {
 
 /* The Close Button */
 .close,.next,.previous {
-    color: white;
+    color: var(--color-1);
     float: right;
     position: fixed;
     
@@ -899,7 +907,7 @@ footer>p {
 .modal-header {
     padding: 2px 16px;
     background-color: var(--icon-color);
-    color: white;
+    color: var(--color-1);
     border-radius: 5px 5px 0 0;
 }
 .modal-body {
@@ -913,7 +921,7 @@ footer>p {
 .modal-footer {
     padding: 2px 16px;
     background-color: var(--icon-color);
-    color: white;
+    color: var(--color-1);
     border-radius: 0 0 5px 5px;
 }
 
