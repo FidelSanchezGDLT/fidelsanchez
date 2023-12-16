@@ -66,7 +66,7 @@ html {
 
 /* Handle */
 .media-scroller::-webkit-scrollbar-thumb {
-    background: var(--color-hb);
+    background: var(--color-3);
     border: var(--border-px) solid black;
     border-radius: 100vh;
     box-shadow: inset -2px -2px 5px var(--color-hid),
@@ -83,9 +83,10 @@ html {
 }*/
 
 body {
-    margin: 0 auto;
+    margin:0 auto;
     min-height: 100vh;
     max-width: 1400px;
+    
 }
 
 *,
@@ -116,9 +117,11 @@ a {
     z-index: 1;
     position: fixed;
     display: flex;
-
-    margin-bottom: 0.5rem;
-    /*margin-top:0rem;*/
+    top: 0rem;
+    /*margin-top:-6rem;
+    /*top: 0rem;
+    margin-bottom: .5rem;
+    margin-top:0rem;*/
     /*background-color:rgba(173, 216, 230, 85%);*/
     background-image: linear-gradient( black, hsla(0, 0%, 15%, 0.70));
     /*var(--color-2);*/
@@ -146,9 +149,6 @@ a {
 .encabezado-icon,
 .rrss {
     list-style-type: none;
-
-
-
 }
 
 .menu-logo {
@@ -385,17 +385,13 @@ a.menu-icon-enlace:active {
 .encabezado {
     position: relative;
     z-index: 2;
-    padding: 5vh 0;
-
-
-    border: var(--border-px) solid #add8e6;
-    /*var(--color-2);*/
-    ;
+    padding: 3rem 0;
     background-color: var(--color-2);
     box-shadow: 0 5px 10px hsl(0, 0%, 0%);
 
-
+    border: var(--border-px) solid #add8e6;
 }
+
 
 .encabezado>h1,
 h4 {
@@ -819,9 +815,7 @@ footer>p {
 .media-element {
     cursor: pointer;
     animation: animate-l2r .5s ease-in;
-    animation-delay: 0s;
-    
-
+    animation-delay: 0s;    
 }
 
 .first-element {
@@ -831,11 +825,11 @@ footer>p {
 
 @keyframes animate-l2r {
     from {
-        left: -500px;
+        left: 0px;
         opacity: 0;
     }
 
-    to {
+    to {        
         left: 0;
         opacity: 1;
     }
